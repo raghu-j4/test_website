@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediLife Hospital - Quality Healthcare Services</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0d6efd;
+            --secondary: #198754;
+            --accent: #ffc107;
+            --dark: #212529;
+            --light: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(13, 110, 253, 0.8), rgba(25, 135, 84, 0.8)), url('https://placehold.co/1920x1080') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            min-height: 600px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            transition: transform 0.3s ease;
+        }
+
+        .doctor-card {
+            transition: all 0.3s ease;
+        }
+
+        .doctor-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .doctor-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            background-color: var(--light);
+        }
+
+        .appointment-form {
+            background: linear-gradient(135deg, rgba(13, 110, 253, 0.9), rgba(25, 135, 84, 0.9));
+        }
+
+        .floating-btn {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .nav-link.active {
+            color: var(--primary) !important;
+            font-weight: 500;
+        }
+
+        .tab-pane {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-hospital me-2 text-primary"></i>
+                <span class="fw-bold text-primary">MediLife</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#doctors">Doctors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <button class="btn btn-primary ms-3" onclick="scrollToAppointment()">Book Appointment</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section d-flex align-items-center">
+        <div class="container text-white text-center">
+            <h1 class="display-3 fw-bold mb-4">Advanced Medical Care You Can Trust</h1>
+            <p class="lead mb-5">Providing comprehensive healthcare services with compassion and excellence.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#appointment" class="btn btn-light btn-lg px-4">Book Appointment</a>
+                <a href="#services" class="btn btn-outline-light btn-lg px-4">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Info -->
+    <section class="bg-danger text-white py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-phone-alt fs-4 me-3"></i>
+                        <div>
+                            <h4 class="mb-0">Emergency Hotline</h4>
+                            <h2 class="mb-0 fw-bold">+1 (234) 567-8910</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-end mt-3 mt-md-0">
+                    <p class="mb-0">24/7 Emergency Services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h6 class="text-primary fw-bold">OUR SERVICES</h6>
+                <h2 class="fw-bold">Healthcare Services</h2>
+                <p class="text-muted">Comprehensive care for all your health needs</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card service-card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+                                <i class="fas fa-heartbeat fs-3 text-primary"></i>
+                            </div>
+                            <h5 class="card-title">Cardiology</h5>
+                            <p class="card-text text-muted">Comprehensive heart care with advanced diagnostics and treatment options.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary" onclick="showServiceDetails('cardiology')">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card service-card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+                                <i class="fas fa-brain fs-3 text-primary"></i>
+                            </div>
+                            <h5 class="card-title">Neurology</h5>
+                            <p class="card-text text-muted">Specialized care for neurological disorders with cutting-edge technology.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary" onclick="showServiceDetails('neurology')">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card service-card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+                                <i class="fas fa-bone fs-3 text-primary"></i>
+                            </div>
+                            <h5 class="card-title">Orthopedics</h5>
+                            <p class="card-text text-muted">Expert care for musculoskeletal injuries and conditions with rehabilitation.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary" onclick="showServiceDetails('orthopedics')">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card service-card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+                                <i class="fas fa-baby fs-3 text-primary"></i>
+                            </div>
+                            <h5 class="card-title">Pediatrics</h5>
+                            <p class="card-text text-muted">Compassionate care for infants, children and adolescents from our specialists.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary" onclick="showServiceDetails('pediatrics')">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card service-card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+                                <i class="fas fa-x-ray fs-3 text-primary"></i>
+                            </div>
+                            <h5 class="card-title">Radiology</h5>
+                            <p class="card-text text-muted">Advanced imaging services with accurate interpretation by expert radiologists.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary" onclick="showServiceDetails('radiology')">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card service-card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+                                <i class="fas fa-procedures fs-3 text-primary"></i>
+                            </div>
+                            <h5 class="card-title">Surgery</h5>
+                            <p class="card-text text-muted">State-of-the-art surgical procedures with minimally invasive techniques.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary" onclick="showServiceDetails('surgery')">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="https://placehold.co/600x400" alt="Modern hospital facility with advanced equipment and caring medical staff" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h6 class="text-primary fw-bold">ABOUT US</h6>
+                    <h2 class="fw-bold mb-4">Why Choose MediLife Hospital</h2>
+                    <p class="text-muted mb-4">MediLife Hospital has been providing exceptional healthcare services to our community for over 20 years. Our commitment to patient-centered care has made us a leader in medical excellence.</p>
+                    
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Board-certified physicians with specialized expertise</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> State-of-the-art medical equipment and technology</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Compassionate and personalized patient care</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Accredited by leading healthcare organizations</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Comprehensive range of medical specialties</li>
+                    </ul>
+                    
+                    <a href="#" class="btn btn-primary">Learn More About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section id="doctors" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h6 class="text-primary fw-bold">OUR TEAM</h6>
+                <h2 class="fw-bold">Meet Our Specialists</h2>
+                <p class="text-muted">Highly skilled professionals dedicated to your health</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card doctor-card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="https://placehold.co/400x400" class="card-img-top" alt="Dr. Sarah Johnson, Cardiologist with 15 years experience">
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-1">Dr. Sarah Johnson</h5>
+                            <p class="text-muted mb-2">Cardiologist</p>
+                            <p class="small text-muted">MD, FACC | 15 years experience</p>
+                            <button class="btn btn-sm btn-outline-primary mt-2" onclick="viewDoctorProfile('sarah-johnson')">View Profile</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card doctor-card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="https://placehold.co/400x400" class="card-img-top" alt="Dr. Michael Chen, Neurologist specializing in movement disorders">
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-1">Dr. Michael Chen</h5>
+                            <p class="text-muted mb-2">Neurologist</p>
+                            <p class="small text-muted">MD, PhD | Fellowship in Neurology</p>
+                            <button class="btn btn-sm btn-outline-primary mt-2" onclick="viewDoctorProfile('michael-chen')">View Profile</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card doctor-card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="https://placehold.co/400x400" class="card-img-top" alt="Dr. Robert Williams, Orthopedic Surgeon with sports medicine expertise">
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-1">Dr. Robert Williams</h5>
+                            <p class="text-muted mb-2">Orthopedic Surgeon</p>
+                            <p class="small text-muted">MD, FAAOS | Sports Medicine</p>
+                            <button class="btn btn-sm btn-outline-primary mt-2" onclick="viewDoctorProfile('robert-williams')">View Profile</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card doctor-card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="https://placehold.co/400x400" class="card-img-top" alt="Dr. Lisa Rodriguez, Pediatrician specializing in neonatal care">
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-1">Dr. Lisa Rodriguez</h5>
+                            <p class="text-muted mb-2">Pediatrician</p>
+                            <p class="small text-muted">MD, FAAP | Neonatal Specialist</p>
+                            <button class="btn btn-sm btn-outline-primary mt-2" onclick="viewDoctorProfile('lisa-rodriguez')">View Profile</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-outline-primary">View All Doctors</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h2 class="display-4 fw-bold" id="happyPatients">5000+</h2>
+                    <p class="mb-0">Happy Patients</p>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h2 class="display-4 fw-bold" id="qualifiedDoctors">80+</h2>
+                    <p class="mb-0">Qualified Doctors</p>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h2 class="display-4 fw-bold" id="clinicsRooms">25+</h2>
+                    <p class="mb-0">Clinics & Rooms</p>
+                </div>
+                <div class="col-md-3">
+                    <h2 class="display-4 fw-bold" id="yearsExperience">20+</h2>
+                    <p class="mb-0">Years Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h6 class="text-primary fw-bold">TESTIMONIALS</h6>
+                <h2 class="fw-bold">What Our Patients Say</h2>
+                <p class="text-muted">Patient satisfaction is our top priority</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card testimonial-card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                    <img src="https://placehold.co/60x60" alt="John D. - satisfied patient" class="rounded-circle" width="60" height="60">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5 class="mb-1">John D.</h5>
+                                    <div class="text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="card-text mb-0">"The care I received at MediLife was exceptional. The doctors took time to listen and explain everything clearly. My surgery went smoothly and the follow-up care was excellent."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card testimonial-card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                    <img src="https://placehold.co/60x60" alt="Maria S. - happy patient" class="rounded-circle" width="60" height="60">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5 class="mb-1">Maria S.</h5>
+                                    <div class="text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="card-text mb-0">"As a mother, I trust MediLife with my children's health. The pediatric department is wonderful - they make visits comfortable and are so patient with kids. Highly recommend!"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card testimonial-card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                    <img src="https://placehold.co/60x60" alt="David T. - grateful patient" class="rounded-circle" width="60" height="60">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5 class="mb-1">David T.</h5>
+                                    <div class="text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="card-text mb-0">"After my accident, the orthopedic team helped me recover fully. Their rehabilitation program was perfectly tailored to my needs. They're truly experts in their field."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section id="appointment" class="py-5 appointment-form text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow-lg border-0">
+                        <div class="card-body p-4 p-lg-5">
+                            <div class="text-center mb-4">
+                                <h2 class="fw-bold mb-2">Book an Appointment</h2>
+                                <p class="mb-0">Schedule your visit with our specialists</p>
+                            </div>
+                            
+                            <form id="appointmentForm" onsubmit="submitAppointment(event)">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="name" class="form-label">Full Name</label>
+                                        <input type="text" class="form-control" id="name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="phone" class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-control" id="phone" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="department" class="form-label">Department</label>
+                                        <select class="form-select" id="department" required>
+                                            <option value="" selected disabled>Select Department</option>
+                                            <option value="cardiology">Cardiology</option>
+                                            <option value="neurology">Neurology</option>
+                                            <option value="orthopedics">Orthopedics</option>
+                                            <option value="pediatrics">Pediatrics</option>
+                                            <option value="general">General Medicine</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="doctor" class="form-label">Preferred Doctor (Optional)</label>
+                                        <select class="form-select" id="doctor">
+                                            <option value="" selected>Any Available Doctor</option>
+                                            <option value="sarah-johnson">Dr. Sarah Johnson</option>
+                                            <option value="michael-chen">Dr. Michael Chen</option>
+                                            <option value="robert-williams">Dr. Robert Williams</option>
+                                            <option value="lisa-rodriguez">Dr. Lisa Rodriguez</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="date" class="form-label">Preferred Date</label>
+                                        <input type="date" class="form-control" id="date" min="" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label">Additional Information</label>
+                                        <textarea class="form-control" id="message" rows="3"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-light w-100 py-2 fw-bold">Book Appointment</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h6 class="text-primary fw-bold">FAQ</h6>
+                <h2 class="fw-bold">Frequently Asked Questions</h2>
+                <p class="text-muted">Find answers to common questions about our hospital</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    What insurance plans do you accept?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We accept most major insurance plans including Medicare, Blue Cross Blue Shield, Aetna, Cigna, and UnitedHealthcare. Please contact our billing department for specific coverage questions.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    How can I access my medical records?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    You can access your medical records through our secure patient portal. For assistance, contact our medical records department at records@medilife.example.com or call (555) 123-4567.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    What are your visiting hours?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    General visiting hours are from 8:00 AM to 8:00 PM daily. ICU and specialty units may have restricted hours. Please check with the nursing station for specific unit policies.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                    How do I prepare for surgery?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our pre-operative team will provide detailed instructions tailored to your procedure. Generally, you should fast for 8 hours before surgery, arrange for transportation home, and bring a list of your medications.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                                    Do you offer telemedicine services?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, we offer virtual consultations for many specialties. Schedule a telemedicine appointment through our patient portal or by calling our main number. Some conditions may require in-person evaluation.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="text-center text-lg-start">
+                        <h2 class="fw-bold mb-4">Contact Information</h2>
+                        <div class="mb-4">
+                            <h5 class="fw-bold mb-3"><i class="fas fa-map-marker-alt me-2 text-primary"></i> Address</h5>
+                            <p>123 Medical Center Drive<br>Healthville, HV 12345</p>
+                        </div>
+                        <div class="mb-4">
+                            <h5 class="fw-bold mb-3"><i class="fas fa-phone-alt me-2 text-primary"></i> Phone</h5>
+                            <p>Main: (555) 123-4567<br>Emergency: (555) 987-6543</p>
+                        </div>
+                        <div class="mb-4">
+                            <h5 class="fw-bold mb-3"><i class="fas fa-envelope me-2 text-primary"></i> Email</h5>
+                            <p>General: info@medilife.example.com<br>Appointments: appointments@medilife.example.com</p>
+                        </div>
+                        <div class="mb-4">
+                            <h5 class="fw-bold mb-3"><i class="fas fa-clock me-2 text-primary"></i> Hours</h5>
+                            <p>Emergency: 24/7<br>Clinic: Mon-Fri 8:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="fw-bold mb-4">Send Us a Message</h3>
+                            <form id="contactForm">
+                                <div class="mb-3">
+                                    <label for="contactName" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="contactName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contactEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="contactEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contactSubject" class="form-label">Subject</label>
+                                    <input type="text" class="form-control" id="contactSubject" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contactMessage" class="form-label">Message</label>
+                                    <textarea class="form-control" id="contactMessage" rows="4" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="mb-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-hospital me-2 fs-3 text-primary"></i>
+                            <span class="fs-3 fw-bold text-primary">MediLife</span>
+                        </div>
+                    </div>
+                    <p class="mb-4">Providing exceptional healthcare services with compassion and advanced medical expertise since 2003.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white"><i class="fab fa-facebook-f fs-5"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter fs-5"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram fs-5"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in fs-5"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-lg-2">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#services" class="text-white text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="#doctors" class="text-white text-decoration-none">Doctors</a></li>
+                        <li class="mb-2"><a href="#about" class="text-white text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="#appointment" class="text-white text-decoration-none">Appointments</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-white text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 col-lg-3">
+                    <h5 class="fw-bold mb-3">Departments</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Emergency Care</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Cardiology</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Neurology</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Orthopedics</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Pediatrics</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Radiology</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 col-lg-3">
+                    <h5 class="fw-bold mb-3">Newsletter</h5>
+                    <p class="mb-3">Subscribe to our newsletter for health tips and hospital updates.</p>
+                    <form class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </form>
+                    <div class="d-flex align-items-center mt-3">
+                        <i class="fas fa-headset me-2 fs-4 text-primary"></i>
+                        <div>
+                            <p class="mb-0 fw-bold">Emergency Call</p>
+                            <p class="mb-0">+1 (234) 567-8910</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 MediLife Hospital. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Designed with <i class="fas fa-heart text-danger"></i> for better healthcare</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <div class="floating-btn position-fixed bottom-0 end-0 mb-4 me-4">
+        <button class="btn btn-primary rounded-circle shadow-lg" style="width: 60px; height: 60px;" onclick="scrollToAppointment()">
+            <i class="fas fa-calendar-check fs-4"></i>
+        </button>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Set minimum date for appointment scheduling (today)
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('date').min = today;
+            
+            // Animate stats counters
+            animateValue("happyPatients", 0, 5000, 2000);
+            animateValue("qualifiedDoctors", 0, 80, 2000);
+            animateValue("clinicsRooms", 0, 25, 2000);
+            animateValue("yearsExperience", 0, 20, 2000);
+            
+            // Add active class to nav links based on scroll position
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section');
+                const navLinks = document.querySelectorAll('.nav-link');
+                
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (pageYOffset >= (sectionTop - 300)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Smooth scroll to appointment section
+        function scrollToAppointment() {
+            const element = document.getElementById('appointment');
+            element.scrollIntoView({behavior: 'smooth'});
+        }
+
+        // Display service details modal
+        function showServiceDetails(service) {
+            let title = '';
+            let description = '';
+            let imageUrl = '';
+            
+            switch(service) {
+                case 'cardiology':
+                    title = 'Cardiology Department';
+                    description = 'Our cardiology department offers comprehensive heart care services including diagnostic testing, preventive cardiology, interventional procedures, and cardiac rehabilitation. Our board-certified cardiologists specialize in treating heart disease, arrhythmias, heart failure, and vascular conditions.';
+                    imageUrl = 'https://placehold.co/800x500';
+                    break;
+                case 'neurology':
+                    title = 'Neurology Department';
+                    description = 'The neurology department provides expert care for disorders of the nervous system including stroke, epilepsy, multiple sclerosis, Parkinson’s disease, and migraines. We offer advanced diagnostics and treatments with cutting-edge technology and personalized care plans.';
+                    imageUrl = 'https://placehold.co/800x500';
+                    break;
+                case 'orthopedics':
+                    title = 'Orthopedics Department';
+                    description = 'Our orthopedic specialists provide comprehensive bone and joint care including sports medicine, joint replacement, spine surgery, and trauma care. We emphasize minimally invasive techniques and personalized rehabilitation programs for optimal recovery.';
+                imageUrl = 'https://placehold.co/800x500';
+                break;
+            case 'pediatrics':
+                title = 'Pediatrics Department';
+                description = 'Our pediatric team provides compassionate care for infants, children and adolescents. Services include well-child visits, immunizations, sick care, developmental screenings, and management of chronic conditions in a child-friendly environment.';
+                imageUrl = 'https://placehold.co/800x500';
+                break;
+            case 'radiology':
+                title = 'Radiology Department';
+                description = 'The radiology department offers advanced imaging services including X-rays, CT scans, MRI, ultrasound, and mammography. Our board-certified radiologists provide accurate interpretations using state-of-the-art equipment with specialized care for each patient.';
+                imageUrl = 'https://placehold.co/800x500';
+                break;
+            case 'surgery':
+                title = 'Surgical Services';
+                description = 'Our surgical team provides a full range of surgical procedures with expertise in minimally invasive techniques. Services include general surgery, orthopedic surgery, neurosurgery, and specialized procedures with focus on safety, precision and optimal outcomes.';
+                imageUrl = 'https://placehold.co/800x500';
+                break;
+        }
+
+        // Create and show modal
+        const modalHTML = `
+            <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="serviceModalLabel">${title}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img src="${imageUrl}" alt="${title} department with modern equipment and staff" class="img-fluid rounded mb-3">
+                                </div>
+                                <div class="col-md-6">
+                                    <p>${description}</p>
+                                    <h6 class="mt-4">Our Services Include:</h6>
+                                    <ul>
+                                        ${service === 'cardiology' ? `
+                                            <li>Echocardiograms and stress tests</li>
+                                            <li>Cardiac catheterization</li>
+                                            <li>Pacemaker implants</li>
+                                            <li>Preventive heart care</li>
+                                        ` : ''}
+                                        ${service === 'neurology' ? `
+                                            <li>EEG and EMG testing</li>
+                                            <li>Stroke care</li>
+                                            <li>Movement disorder treatment</li>
+                                            <li>Headache and pain management</li>
+                                        ` : ''}
+                                        ${service === 'orthopedics' ? `
+                                            <li>Joint replacement</li>
+                                            <li>Arthroscopic surgery</li>
+                                            <li>Fracture care</li>
+                                            <li>Sports medicine</li>
+                                        ` : ''}
+                                        ${service === 'pediatrics' ? `
+                                            <li>Well-child examinations</li>
+                                            <li>Vaccinations</li>
+                                            <li>Asthma and allergy care</li>
+                                            <li>Developmental screenings</li>
+                                        ` : ''}
+                                        ${service === 'radiology' ? `
+                                            <li>Digital X-rays</li>
+                                            <li>CT and MRI scanning</li>
+                                            <li>Mammography</li>
+                                            <li>Ultrasound</li>
+                                        ` : ''}
+                                        ${service === 'surgery' ? `
+                                            <li>Laparoscopic procedures</li>
+                                            <li>Robotic-assisted surgery</li>
+                                            <li>General and specialized surgeries</li>
+                                            <li>Post-operative care</li>
+                                        ` : ''}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" onclick="scrollToAppointment()">Book Appointment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Add modal to DOM
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+        const modal = new bootstrap.Modal(document.getElementById('serviceModal'));
+        modal.show();
+
+        // Remove modal after it's closed
+        document.getElementById('serviceModal').addEventListener('hidden.bs.modal', function () {
+            this.remove();
+        });
+    }
+
+    // View doctor profile
+    function viewDoctorProfile(doctorId) {
+        let doctor = {};
+        
+        switch(doctorId) {
+            case 'sarah-johnson':
+                doctor = {
+                    name: "Dr. Sarah Johnson",
+                    specialty: "Cardiology",
+                    education: "MD, FACC (Fellow of the American College of Cardiology)",
+                    experience: "15 years",
+                    description: "Dr. Johnson specializes in interventional cardiology and preventive heart care. She completed her fellowship at Harvard Medical School and has published numerous research papers on cardiovascular health.",
+                    expertise: "Coronary artery disease, Heart failure, Arrhythmias, Preventive cardiology",
+                    image: "https://placehold.co/400x500"
+                };
+                break;
+            case 'michael-chen':
+                doctor = {
+                    name: "Dr. Michael Chen",
+                    specialty: "Neurology",
+                    education: "MD, PhD, Fellowship in Movement Disorders",
+                    experience: "12 years",
+                    description: "Dr. Chen is a board-certified neurologist with special training in movement disorders. His research focuses on innovative treatments for Parkinson's disease and essential tremor.",
+                    expertise: "Parkinson's disease, Essential tremor, Dystonia, Neurodegenerative disorders",
+                    image: "https://placehold.co/400x500"
+                };
+                break;
+            case 'robert-williams':
+                doctor = {
+                    name: "Dr. Robert Williams",
+                    specialty: "Orthopedic Surgery",
+                    education: "MD, FAAOS (Fellow of the American Academy of Orthopedic Surgeons)",
+                    experience: "18 years",
+                    description: "Dr. Williams specializes in sports medicine and minimally invasive joint procedures. As a former collegiate athlete, he understands the importance of proper rehabilitation.",
+                    expertise: "Knee and shoulder arthroscopy, Joint replacement, Sports injuries, Fracture care",
+                    image: "https://placehold.co/400x500"
+                };
+                break;
+            case 'lisa-rodriguez':
+                doctor = {
+                    name: "Dr. Lisa Rodriguez",
+                    specialty: "Pediatrics",
+                    education: "MD, FAAP (Fellow of the American Academy of Pediatrics)",
+                    experience: "10 years",
+                    description: "Dr. Rodriguez provides compassionate care for children of all ages. She has special training in neonatal care and childhood development.",
+                    expertise: "Well-child care, Childhood immunizations, Developmental screenings, Asthma management",
+                    image: "https://placehold.co/400x500"
+                };
+                break;
+        }
+
+        // Create and show modal
+        const modalHTML = `
+            <div class="modal fade" id="doctorModal" tabindex="-1" aria-labelledby="doctorModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="doctorModalLabel">${doctor.name}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img src="${doctor.image}" alt="Portrait of ${doctor.name}, ${doctor.specialty} specialist" class="img-fluid rounded mb-3">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h6 class="card-subtitle mb-2 text-muted">Specialty</h6>
+                                            <p class="card-text">${doctor.specialty}</p>
+                                            <h6 class="card-subtitle mb-2 text-muted">Education</h6>
+                                            <p class="card-text">${doctor.education}</p>
+                                            <h6 class="card-subtitle mb-2 text-muted">Experience</h6>
+                                            <p class="card-text">${doctor.experience}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h5>About Dr. ${doctor.name.split(' ')[1]}</h5>
+                                    <p>${doctor.description}</p>
+                                    
+                                    <h5 class="mt-4">Areas of Expertise</h5>
+                                    <p>${doctor.expertise}</p>
+                                    
+                                    <h5 class="mt-4">Availability</h5>
+                                    <p>Monday - Friday: 8:00 AM - 4:00 PM</p>
+                                    <p>Saturday: 9:00 AM - 12:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" onclick="scrollToAppointment()">Book Appointment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Add modal to DOM
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+        const modal = new bootstrap.Modal(document.getElementById('doctorModal'));
+        modal.show();
+
+        // Remove modal after it's closed
+        document.getElementById('doctorModal').addEventListener('hidden.bs.modal', function () {
+            this.remove();
+        });
+    }
+
+    // Submit appointment form
+    function submitAppointment(event) {
+        event.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const department = document.getElementById('department').value;
+        const date = document.getElementById('date').value;
+        
+        // In a real application, you would send this data to a server
+        alert(`Thank you, ${name}! Your appointment request for ${department} on ${date} has been received. We will contact you at ${email} to confirm.`);
+        
+        // Reset form
+        document.getElementById('appointmentForm').reset();
+        
+        // Close any open modals
+        const openModal = document.querySelector('.modal.show');
+        if (openModal) {
+            bootstrap.Modal.getInstance(openModal).hide();
+        }
+    }
+
+    // Animate counter values
+    function animateValue(id, start, end, duration) {
+        const obj = document.getElementById(id);
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            obj.innerHTML = Math.floor(progress * (end - start) + start) + (id === 'happyPatients' ? '+' : '');
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    // Handle contact form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('contactName').value;
+        alert(`Thank you, ${name}! Your message has been received. We will respond to your inquiry shortly.`);
+        this.reset();
+    });
+</script>
